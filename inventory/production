@@ -1,0 +1,2 @@
+[jenkins]
+production ansible_ssh_host=ci.devba.se

@@ -1,0 +1,25 @@
+<VirtualHost *:80>
+	UseCanonicalName Off
+	ServerName ci.devba.se
+	ServerAlias jenkins.devba.se
+	
+	ProxyPass         /  http://localhost:8080/ nocanon
+	ProxyPassReverse  /  http://localhost:8080/
+	ProxyRequests     Off
+	AllowEncodedSlashes NoDecode
+
+	# Local reverse proxy authorization override
+	# Most unix distribution deny proxy by default (ie /etc/apache2/mods-enabled/proxy.conf in Ubuntu)
+	<Proxy http://localhost:8080/*>
+	  Order deny,allow
+	  Allow from all
+	</Proxy>
+
+	ErrorLog /var/log/apache2/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
