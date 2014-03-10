@@ -1,0 +1,20 @@
+---
+- name: Get Jenkins JAR
+  shell: wget {{ jenkins_host }}/jnlpJars/jenkins-cli.jar -O {{ jenkins_cli }} creates={{ jenkins_cli }}
+
+- name: Install plugins
+  command: java -jar {{ jenkins_cli }} -s {{ jenkins_host }} install-plugin {{ item }}
+  with_items:
+      - checkstyle
+      - cloverphp
+      - dry
+      - htmlpublisher
+      - jdepend
+      - plot
+      - pmd
+      - violations
+      - xunit
+      - git
+
+- name: Restart Jenkins
+  command: java -jar {{ jenkins_cli }} -s {{ jenkins_host }} safe-restart

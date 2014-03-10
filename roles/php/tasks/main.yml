@@ -5,3 +5,16 @@
 
 - name: Install PHPCS Fixer
   shell: wget http://cs.sensiolabs.org/get/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer && chmod a+x /usr/local/bin/php-cs-fixer creates=/usr/local/bin/php-cs-fixer
+
+- name: Install PHPLOC
+  shell: wget https://phar.phpunit.de/phploc.phar -O /usr/local/bin/phploc && chmod a+x /usr/local/bin/phploc
+
+- name: Install PHPCPD
+  shell: wget https://phar.phpunit.de/phpcpd.phar -O /usr/local/bin/phpcpd && chmod a+x /usr/local/bin/phpcpd
+
+- name: Install PHPDoX
+  shell: wget http://phpdox.de/releases/phpdox.phar -O /usr/local/bin/phpdox && chmod a+x /usr/local/bin/phpdox
+
+- name: Install Composer
+  tags: php
+  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

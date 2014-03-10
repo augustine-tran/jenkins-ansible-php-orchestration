@@ -4,14 +4,22 @@
 
 - name: Discover Pear Channels
   command: pear channel-discover {{ item }}
+  ignore_errors: yes
   with_items:
       - pear.phpdoc.org
       - pear.phpunit.de
+      - pear.pdepend.org
+      - pear.phpmd.org
 
 - name: Install Pear Libraries
   command: pear install {{ item }}
+  ignore_errors: yes
   with_items:
       - XML_RPC2
       - pear.phpunit.de/PHPUnit
       - phpunit/PHPUnit_SkeletonGenerator
       - phpdoc/phpDocumentor-alpha
+      - PHP_CodeSniffer
+      - pdepend/pdepend
+      - "--alldeps phpmd/PHP_PMD"
+      - pear.netpirates.net/phpDox-0.6.5

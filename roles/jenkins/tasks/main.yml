@@ -10,3 +10,7 @@
 
 - name: Install jenkins
   action: apt pkg=jenkins update_cache=yes force=yes state=latest
+
+- include: plugins.yml
+- include: templates.yml
+- include: apache-ant.yml

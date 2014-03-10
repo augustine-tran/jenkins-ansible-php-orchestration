@@ -3,14 +3,14 @@
 	ServerName ci.devba.se
 	ServerAlias jenkins.devba.se
 	
-	ProxyPass         /  http://localhost:8080/ nocanon
-	ProxyPassReverse  /  http://localhost:8080/
+	ProxyPass         /  {{ jenkins_host }}/ nocanon
+	ProxyPassReverse  /  {{ jenkins_host }}/
 	ProxyRequests     Off
 	AllowEncodedSlashes NoDecode
 
 	# Local reverse proxy authorization override
 	# Most unix distribution deny proxy by default (ie /etc/apache2/mods-enabled/proxy.conf in Ubuntu)
-	<Proxy http://localhost:8080/*>
+	<Proxy {{ jenkins_host }}/*>
 	  Order deny,allow
 	  Allow from all
 	</Proxy>

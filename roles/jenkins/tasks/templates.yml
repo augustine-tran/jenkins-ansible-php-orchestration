@@ -1,0 +1,7 @@
+---
+- name: Install Job Template
+  ignore_errors: yes
+  shell: curl https://raw.github.com/sebastianbergmann/php-jenkins-template/master/config.xml | java -jar {{ jenkins_cli }} -s {{ jenkins_host }} create-job php-template
+
+- name: Reload Jenkins
+  command: java -jar {{ jenkins_cli }} -s {{ jenkins_host }} reload-configuration

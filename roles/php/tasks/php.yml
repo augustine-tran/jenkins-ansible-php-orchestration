@@ -12,3 +12,5 @@
         - php5-mcrypt
         - php5-tidy
         - php-pear
+        - php5-curl
+        - php5-sqlite

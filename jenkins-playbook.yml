@@ -1,9 +1,14 @@
 ---
 - hosts: all
   roles:
+    - base
     - jenkins
     - apache
     - php
   sudo: true
   user: base
+  vars:
+    - server_host_name: ci.devba.se
+    - jenkins_host: http://localhost:8080
+    - jenkins_cli: /usr/local/bin/jenkins-cli.jar
  
