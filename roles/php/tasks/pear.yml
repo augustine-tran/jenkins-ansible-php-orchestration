@@ -3,7 +3,7 @@
   command: pear config-set auto_discover 1
 
 - name: Discover Pear Channels
-  action: pear channel-discover {{ item }}
+  command: pear channel-discover {{ item }}
   with_items:
       - pear.phpdoc.org
       - pear.phpunit.de

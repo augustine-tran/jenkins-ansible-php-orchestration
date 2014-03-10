@@ -4,7 +4,7 @@
 
 - name: Add jenkins APT repository
   action: apt_repository repo='deb http://pkg.jenkins-ci.org/debian binary/' state=present
-
+  
 - name: Remove non-existing src apt repository
   action: apt_repository repo='deb-src http://pkg.jenkins-ci.org/debian binary/' state=absent
 
