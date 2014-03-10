@@ -1,0 +1,7 @@
+---
+- include: php.yml
+- include: hhvm.yml
+- include: pear.yml
+
+- name: Install PHPCS Fixer
+  shell: wget http://cs.sensiolabs.org/get/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer && chmod a+x /usr/local/bin/php-cs-fixer creates=/usr/local/bin/php-cs-fixer

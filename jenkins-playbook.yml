@@ -3,6 +3,7 @@
   roles:
     - jenkins
     - apache
+    - php
   sudo: true
   user: base
  

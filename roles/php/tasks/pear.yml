@@ -1,0 +1,17 @@
+---
+- name: Set Pear autodiscover
+  command: pear config-set auto_discover 1
+
+- name: Discover Pear Channels
+  action: pear channel-discover {{ item }}
+  with_items:
+      - pear.phpdoc.org
+      - pear.phpunit.de
+
+- name: Install Pear Libraries
+  command: pear install {{ item }}
+  with_items:
+      - XML_RPC2
+      - pear.phpunit.de/PHPUnit
+      - phpunit/PHPUnit_SkeletonGenerator
+      - phpdoc/phpDocumentor-alpha

@@ -1,0 +1,14 @@
+---
+- name: Install Python Software Properties
+  action: apt pkg=python-software-properties
+
+- name: Install Ondrej PPA Repository
+  command: add-apt-repository -y ppa:ondrej/php5
+
+- name: Install PHP 5.5
+  action: apt pkg={{ item }} update_cache=yes force=yes state=latest
+  with_items:
+        - php5
+        - php5-mcrypt
+        - php5-tidy
+        - php-pear

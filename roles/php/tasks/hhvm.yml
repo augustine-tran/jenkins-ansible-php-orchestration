@@ -1,0 +1,9 @@
+---
+- name: Install HHVM GPG Key
+  action: apt_key url=http://dl.hhvm.com/conf/hhvm.gpg.key state=present
+
+- name: Add HHVM APT repository
+  action: apt_repository repo="deb http://dl.hhvm.com/ubuntu saucy main/" state=present
+
+- name: Install HHVM
+  action: apt pkg=hhvm update_cache=yes force=yes state=latest
