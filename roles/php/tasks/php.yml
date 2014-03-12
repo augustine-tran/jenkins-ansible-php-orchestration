@@ -14,3 +14,4 @@
         - php-pear
         - php5-curl
         - php5-sqlite
+        - php5-xsl
