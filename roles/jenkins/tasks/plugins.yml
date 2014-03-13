@@ -2,6 +2,9 @@
 - name: Get Jenkins JAR
   shell: wget {{ jenkins_host }}/jnlpJars/jenkins-cli.jar -O {{ jenkins_cli }} creates={{ jenkins_cli }}
 
+- name: Install the JIRA Plugin for Jenkins
+  shell: wget "http://repository.marvelution.com/service/local/artifact/maven/redirect?r=releases&g=com.marvelution.jira.plugins&a=jenkins-jira-plugin&v=1.4.0&e=hpi" -O /var/lib/jenkins/plugins/jenkins-jira-plugin-1.4.0.hpi creates=/var/lib/jenkins/plugins/jenkins-jira-plugin-1.4.0.hpi
+
 - name: Install plugins
   command: java -jar {{ jenkins_cli }} -s {{ jenkins_host }} install-plugin {{ item }}
   with_items:
@@ -14,7 +17,7 @@
       - pmd
       - violations
       - xunit
-      - git
+      - git      
 
 - name: Restart Jenkins
   command: java -jar {{ jenkins_cli }} -s {{ jenkins_host }} safe-restart

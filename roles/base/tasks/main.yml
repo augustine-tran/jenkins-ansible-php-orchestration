@@ -3,7 +3,7 @@
   file: dest=~/.ssh state=directory
 
 - name: Setup authorized_keys for ssh access
-  shell: touch ~/.ssh/authorized_keys && wget https://raw.github.com/wearebase/public-keys/master/authorized_keys -O ~/.ssh/authorized_keys
+  shell: touch ~/.ssh/authorized_keys && wget https://raw.github.com/wearebase/public-keys/master/authorized_keys -O ~/.ssh/authorized_keys creates=~/.ssh/authorized_keys
 
 - name: Install base packages
   tags: basePkgs
