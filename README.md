@@ -1,4 +1,4 @@
-# Jenkins PHP Ansible
+# Jenkins Ansible Playbook for PHP Projects
 
 This is an ansible playbook that provisions an Ubuntu 13.10 (saucy salamander) server with Jenkins ready to build PHP projects. 
 
