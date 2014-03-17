@@ -1,6 +1,6 @@
 # Jenkins PHP Ansible
 
-This is an ansible playbook that provisions an Ubuntu 12.04 (precise32) server with Jenkins ready to build PHP projects. 
+This is an ansible playbook that provisions an Ubuntu 13.10 (saucy salamander) server with Jenkins ready to build PHP projects. 
 
 It follows [Sebastian Bergmann's](http://sebastian-bergmann.de) [Template for Jenkins Jobs for PHP Projects](http://jenkins-php.org/)
 
