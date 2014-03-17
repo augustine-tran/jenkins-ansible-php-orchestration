@@ -11,6 +11,9 @@
 - name: Install jenkins
   action: apt pkg=jenkins update_cache=yes force=yes state=latest
 
+- name: Start Jenkins
+  command: service jenkins start
+
 - include: plugins.yml
 - include: templates.yml
 - include: apache-ant.yml

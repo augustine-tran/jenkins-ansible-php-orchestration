@@ -1,7 +1,6 @@
 <VirtualHost *:80>
 	UseCanonicalName Off
-	ServerName ci.devba.se
-	ServerAlias jenkins.devba.se
+	ServerName {{ server_host_name }}
 	
 	ProxyPass         /  {{ jenkins_host }}/ nocanon
 	ProxyPassReverse  /  {{ jenkins_host }}/

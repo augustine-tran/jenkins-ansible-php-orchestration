@@ -6,10 +6,10 @@
   shell: touch ~/.ssh/authorized_keys && wget https://raw.github.com/wearebase/public-keys/master/authorized_keys -O ~/.ssh/authorized_keys creates=~/.ssh/authorized_keys
 
 - name: Install base packages
-  tags: basePkgs
   action: apt pkg={{ item }} update_cache=yes force=yes state=latest
   with_items:
         - vim
         - git
         - htop
         - sqlite
+        - python-pycurl

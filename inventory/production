@@ -1,2 +1,2 @@
 [jenkins]
-production ansible_ssh_host=ci.devba.se
+production ansible_ssh_host=ci.devba.se ansible_ssh_user=base
