@@ -17,7 +17,8 @@
       - pmd
       - violations
       - xunit
-      - git      
+      - git
+      - AnsiColor
 
 - name: Restart Jenkins
   command: java -jar {{ jenkins_cli }} -s {{ jenkins_host }} safe-restart
